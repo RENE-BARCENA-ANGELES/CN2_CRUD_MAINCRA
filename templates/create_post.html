@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block title%} Blog de Noticias{% endblock %}
 {% block content%}
-<div class="columns">
-    <div class="column is-offset-3 is-6">
-        <div class="card">
+<div class="columns is-centered">
+    <div class="column is-8-desktop is-10-tablet">
+        <div class="card news-card">
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
-                        <p class="title is-4">Agregar Post</p>
+                        <p class="title is-4">Agregar noticia</p>
                     </div>
                 </div>
                 <div class="content">
@@ -36,8 +36,10 @@
                                 <textarea class="textarea" name="content"></textarea>
                             </div>
                         </div>
-                        <button class="button is-success " type="submit">Agregar</button>
-                        <a class="button is-danger" href="{{ url_for('index') }}">Cancelar</a>
+                        <div class="buttons">
+                            <button class="button is-primary is-light" type="submit">Agregar noticia</button>
+                            <a class="button is-light" href="{{ url_for('index') }}">Cancelar</a>
+                        </div>
                     </form>
                 </div>
             </div>

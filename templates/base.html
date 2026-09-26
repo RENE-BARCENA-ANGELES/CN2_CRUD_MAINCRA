@@ -1,20 +1,146 @@
 <!DOCTYPE html>
-<html class="theme-light" style="background-color: gainsboro;">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/ee9903c79f.js" crossorigin="anonymous"></script>
-</head>
-  <body >
-    <header>
-        <br>
-        <h1 class="title has-text-centered is-1">Blog de Noticias</h1>
-        <hr>
+    <style>
+      :root {
+        --ink: #202923;
+        --muted: #68746c;
+        --green: #286247;
+        --green-dark: #1e4d37;
+        --paper: #f5f7f3;
+        --line: #e2e9e2;
+      }
+
+      html, body {
+        min-height: 100%;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      body {
+        background-image: linear-gradient(145deg, #f8faf7 0%, #edf3ed 100%);
+      }
+
+      .site-header {
+        padding: 2.5rem 1.5rem 2rem;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .header-inner, .page-content {
+        width: min(100% - 2rem, 960px);
+        margin: 0 auto;
+      }
+
+      .site-kicker {
+        margin-bottom: 0.35rem;
+        color: var(--green);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .site-title {
+        margin: 0 !important;
+        color: var(--ink);
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 2.5rem !important;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .page-content {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+      }
+
+      .news-card {
+        margin-bottom: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(32, 41, 35, 0.05);
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .title, .label {
+        color: var(--ink);
+      }
+
+      .category-label {
+        margin-top: 0.35rem;
+        color: var(--green);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .post-content {
+        color: #48544b;
+        line-height: 1.7;
+        white-space: pre-line;
+      }
+
+      .button.is-success {
+        border-color: var(--green);
+        background: var(--green);
+      }
+
+      .button.is-success:hover {
+        border-color: var(--green-dark);
+        background: var(--green-dark);
+      }
+
+      .button.is-danger.is-outlined {
+        color: #a43e3e;
+      }
+
+      .input, .textarea, .select select {
+        border-color: #d5dfd6;
+        border-radius: 5px;
+        box-shadow: none;
+      }
+
+      .input:focus, .textarea:focus, .select select:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 0.125em rgba(40, 98, 71, 0.14);
+      }
+
+      .textarea {
+        min-height: 10rem;
+      }
+
+      @media (max-width: 600px) {
+        .site-header {
+          padding: 2rem 1rem 1.5rem;
+        }
+
+        .site-title {
+          font-size: 2rem !important;
+        }
+
+        .page-content {
+          padding-top: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <h1 class="title site-title">Blog de Minecraft</h1>
+      </div>
     </header>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+    <main class="page-content">
+      {% block content %}{% endblock %}
+    </main>
   </body>
 </html>
